@@ -13,4 +13,4 @@ jobs:
         curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared.deb && sudo cloudflared service install eyJhIjoiMWE1MTc4MTE0YTZjOWZmNDllMzZiNmMxNzVlOTZiYjkiLCJ0IjoiMWE4MTU1MDctZTBkZi00MGQxLWIyNTctN2ZmN2VjMjBmMzFmIiwicyI6Ill6QmtPVFpsTlRRdE4yRTROQzAwWmpBeExXSmlPRFF0TmpBeU5XSmhNekpsWW1FeSJ9
     - name: Codeserver
       run: |
-        curl -sSL https://get.docker.com/ | CHANNEL=stable bash && curl -fsSL https://code-server.dev/install.sh | sh && code-server --auth none
+        curl -fsSL https://code-server.dev/install.sh | sh && code-server --auth none
